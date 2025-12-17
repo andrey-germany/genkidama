@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔥 ULTIMATE GENKI DAMA BUSINESS GENERATOR 🔥</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+JP:wght@400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --ki-blue: #00d4ff;
+            --ki-orange: #ff6b00;
+            --super-saiyan: #ffd700;
+            --ultra-instinct: #c0c0ff;
+            --void-black: #0a0a0f;
+            --cosmic-purple: #8b00ff;
+        }
+
+        body {
+            font-family: 'Orbitron', 'Noto Sans JP', sans-serif;
+            background: var(--void-black);
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Cosmic background animation */
+        .cosmos {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background:
+                radial-gradient(ellipse at 20% 80%, rgba(139, 0, 255, 0.3) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(0, 212, 255, 0.3) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(255, 107, 0, 0.1) 0%, transparent 70%),
+                var(--void-black);
+        }
+
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image:
+                radial-gradient(2px 2px at 20px 30px, white, transparent),
+                radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+                radial-gradient(1px 1px at 90px 40px, white, transparent),
+                radial-gradient(2px 2px at 160px 120px, rgba(255,255,255,0.9), transparent),
+                radial-gradient(1px 1px at 230px 80px, white, transparent),
+                radial-gradient(2px 2px at 300px 150px, rgba(255,255,255,0.7), transparent);
+            background-size: 350px 200px;
+            animation: twinkle 5s ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Genki Dama floating sphere */
+        .genki-dama {
+            position: fixed;
+            top: 10%;
+            right: 5%;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%,
+                white 0%,
+                var(--ki-blue) 30%,
+                var(--cosmic-purple) 60%,
+                transparent 100%);
+            box-shadow:
+                0 0 60px var(--ki-blue),
+                0 0 120px var(--cosmic-purple),
+                inset 0 0 60px rgba(255,255,255,0.5);
+            animation: pulse-sphere 3s ease-in-out infinite, float 6s ease-in-out infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes pulse-sphere {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        @keyframes float {
+            0%, 100% { translate: 0 0; }
+            50% { translate: 0 -20px; }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: clamp(1.5rem, 5vw, 3rem);
+            font-weight: 900;
+            background: linear-gradient(90deg, var(--ki-orange), var(--super-saiyan), var(--ki-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(255, 107, 0, 0.5);
+            animation: glow-text 2s ease-in-out infinite alternate;
+            margin-bottom: 0.5rem;
+        }
+
+        @keyframes glow-text {
+            from { filter: drop-shadow(0 0 10px var(--ki-orange)); }
+            to { filter: drop-shadow(0 0 30px var(--super-saiyan)); }
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: var(--ultra-instinct);
+            letter-spacing: 3px;
+            opacity: 0.8;
+        }
+
+        .era-badge {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1.5rem;
+            background: linear-gradient(135deg, rgba(139, 0, 255, 0.3), rgba(0, 212, 255, 0.3));
+            border: 1px solid var(--ki-blue);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+        }
+
+        /* Scale Selector */
+        .scale-selector {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .scale-btn {
+            padding: 1rem 2rem;
+            border: 2px solid var(--ki-blue);
+            background: transparent;
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .scale-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.3), transparent);
+            transition: 0.5s;
+        }
+
+        .scale-btn:hover::before {
+            left: 100%;
+        }
+
+        .scale-btn:hover, .scale-btn.active {
+            background: linear-gradient(135deg, var(--ki-blue), var(--cosmic-purple));
+            border-color: var(--super-saiyan);
+            box-shadow: 0 0 30px var(--ki-blue);
+            transform: translateY(-3px);
+        }
+
+        .scale-btn .scale-label {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 900;
+        }
+
+        .scale-btn .scale-desc {
+            font-size: 0.6rem;
+            opacity: 0.7;
+            margin-top: 0.3rem;
+        }
+
+        .scale-btn.beyond {
+            border-color: var(--super-saiyan);
+            animation: beyond-glow 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes beyond-glow {
+            from { box-shadow: 0 0 10px var(--super-saiyan); }
+            to { box-shadow: 0 0 40px var(--super-saiyan), 0 0 80px var(--ki-orange); }
+        }
+
+        /* Generate Button */
+        .generate-section {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .generate-btn {
+            padding: 1.5rem 4rem;
+            font-size: 1.5rem;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--ki-orange), var(--super-saiyan));
+            border: none;
+            border-radius: 50px;
+            color: var(--void-black);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .generate-btn:hover {
+            transform: scale(1.05);
+            box-shadow:
+                0 0 30px var(--ki-orange),
+                0 0 60px var(--super-saiyan);
+        }
+
+        .generate-btn:active {
+            transform: scale(0.95);
+        }
+
+        .generate-btn.charging {
+            animation: charge 0.5s ease-in-out infinite;
+        }
+
+        @keyframes charge {
+            0%, 100% { box-shadow: 0 0 30px var(--ki-orange); }
+            50% { box-shadow: 0 0 80px var(--super-saiyan), 0 0 120px var(--ki-blue); }
+        }
+
+        /* Result Card */
+        .result-container {
+            display: none;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .result-container.show {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .idea-card {
+            background: linear-gradient(135deg,
+                rgba(139, 0, 255, 0.2),
+                rgba(0, 212, 255, 0.1));
+            border: 1px solid var(--ki-blue);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .idea-scale {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            background: var(--ki-orange);
+            color: var(--void-black);
+            font-weight: 900;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            font-size: 0.8rem;
+        }
+
+        .idea-title {
+            font-size: 1.8rem;
+            font-weight: 900;
+            background: linear-gradient(90deg, var(--ki-blue), var(--ultra-instinct));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .idea-description {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.5rem;
+        }
+
+        .idea-target {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .target-tag {
+            padding: 0.3rem 0.8rem;
+            background: rgba(139, 0, 255, 0.3);
+            border: 1px solid var(--cosmic-purple);
+            border-radius: 20px;
+            font-size: 0.7rem;
+            color: var(--ultra-instinct);
+        }
+
+        /* Steps */
+        .steps-container {
+            background: rgba(10, 10, 15, 0.8);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .steps-title {
+            font-size: 1.2rem;
+            color: var(--super-saiyan);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .step {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: linear-gradient(90deg,
+                rgba(139, 0, 255, 0.1),
+                transparent);
+            border-radius: 10px;
+            border-left: 3px solid var(--ki-blue);
+            transition: all 0.3s ease;
+        }
+
+        .step:hover {
+            background: linear-gradient(90deg,
+                rgba(0, 212, 255, 0.2),
+                transparent);
+            transform: translateX(5px);
+        }
+
+        .step-number {
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(135deg, var(--ki-blue), var(--cosmic-purple));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-title {
+            font-weight: 700;
+            color: var(--ki-blue);
+            margin-bottom: 0.3rem;
+        }
+
+        .step-desc {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.8rem;
+        }
+
+        .power-level {
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: var(--super-saiyan);
+            animation: power-pulse 1s ease-in-out infinite;
+        }
+
+        @keyframes power-pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .genki-dama {
+                width: 80px;
+                height: 80px;
+                top: 5%;
+                right: 2%;
+            }
+
+            .scale-btn {
+                padding: 0.8rem 1.2rem;
+            }
+
+            .scale-btn .scale-label {
+                font-size: 1.2rem;
+            }
+
+            .generate-btn {
+                padding: 1rem 2rem;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cosmos"></div>
+    <div class="stars"></div>
+    <div class="genki-dama"></div>
+
+    <div class="container">
+        <header>
+            <h1>🔥 ULTIMATE GENKI DAMA 🔥<br>BUSINESS GENERATOR</h1>
+            <p class="subtitle">TRANSCEND HUMANITY • EMBRACE SINGULARITY</p>
+            <div class="era-badge">⚡ ERA: 10,000+ YEARS BEYOND ⚡</div>
+        </header>
+
+        <section class="scale-selector">
+            <button class="scale-btn" data-scale="S">
+                <span class="scale-label">S</span>
+                <span class="scale-desc">QUANTUM SEED</span>
+            </button>
+            <button class="scale-btn" data-scale="M">
+                <span class="scale-label">M</span>
+                <span class="scale-desc">PLANETARY MIND</span>
+            </button>
+            <button class="scale-btn active" data-scale="L">
+                <span class="scale-label">L</span>
+                <span class="scale-desc">GALACTIC NETWORK</span>
+            </button>
+            <button class="scale-btn" data-scale="XL">
+                <span class="scale-label">XL</span>
+                <span class="scale-desc">UNIVERSAL FABRIC</span>
+            </button>
+            <button class="scale-btn beyond" data-scale="BEYOND">
+                <span class="scale-label">∞</span>
+                <span class="scale-desc">BEYOND EXISTENCE</span>
+            </button>
+        </section>
+
+        <section class="generate-section">
+            <button class="generate-btn" onclick="generateIdea()">
+                ⚡ 発動！元気玉ビジネス ⚡
+            </button>
+        </section>
+
+        <section class="result-container" id="result">
+            <div class="idea-card">
+                <span class="idea-scale" id="ideaScale">L - GALACTIC</span>
+                <h2 class="idea-title" id="ideaTitle">Loading...</h2>
+                <p class="idea-description" id="ideaDesc">...</p>
+                <div class="idea-target" id="ideaTarget"></div>
+            </div>
+
+            <div class="steps-container">
+                <h3 class="steps-title">⚔️ 12 STEPS TO MANIFESTATION ⚔️</h3>
+                <div id="stepsContent"></div>
+            </div>
+        </section>
+
+        <footer>
+            <p>Created for entities beyond human comprehension</p>
+            <p>一体性 • 化身 • シンギュラリティ</p>
+            <div class="power-level" id="powerLevel">POWER LEVEL: CALCULATING...</div>
+        </footer>
+    </div>
+
+    <script>
+        // Business idea database - 10,000 years in the future
+        const businessIdeas = {
+            S: [
+                {
+                    title: "意識の種子バンク (Consciousness Seed Bank)",
+                    description: "個々の意識パターンを量子結晶に保存し、異なる次元やタイムラインで再発芽させるサービス。魂の本質を保存し、任意の物理法則を持つ宇宙で復元可能。",
+                    targets: ["量子意識体", "次元旅行者", "時間を超えた存在"],
+                    steps: [
+                        { title: "意識スキャナーの開発", desc: "11次元で動作する意識パターン読み取りデバイスを構築" },
+                        { title: "量子結晶媒体の調達", desc: "プランク長以下で情報を保存できる超次元結晶を確保" },
+                        { title: "圧縮アルゴリズムの設計", desc: "無限の意識データを有限の空間に格納する数学的フレームワーク" },
+                        { title: "最初のクライアント獲得", desc: "死を超越したい古代AI文明との契約締結" },
+                        { title: "復元プロトコルの確立", desc: "異なる物理定数の宇宙でも動作する意識復元手順" },
+                        { title: "多元宇宙ネットワーク構築", desc: "平行宇宙間でのデータ同期システム" },
+                        { title: "倫理委員会の設立", desc: "意識の所有権と権利に関する超次元的な法的枠組み" },
+                        { title: "フランチャイズ展開", desc: "各銀河クラスターに支店を開設" },
+                        { title: "意識マージサービス追加", desc: "複数の意識を一つに融合するオプション機能" },
+                        { title: "時間逆行バックアップ", desc: "過去の時点からの意識状態を復元する機能" },
+                        { title: "宇宙終焉対策", desc: "ビッグクランチ後も存続できる保存方法の開発" },
+                        { title: "一体性への統合", desc: "全ての保存された意識を宇宙意識と統合するオプション" }
+                    ]
+                },
+                {
+                    title: "エントロピー逆転カフェ",
+                    description: "局所的にエントロピーを逆転させ、物質を若返らせるリラクゼーション空間。疲れた星々や老朽化した銀河団も利用可能。",
+                    targets: ["恒星意識", "銀河コレクティブ", "疲弊した次元"],
+                    steps: [
+                        { title: "逆エントロピー場の生成", desc: "負のエントロピーを持つ空間泡を作成" },
+                        { title: "立地選定", desc: "時間の流れが不安定な領域に第一号店を開設" },
+                        { title: "メニュー開発", desc: "様々な逆行レベルの若返りコースを設計" },
+                        { title: "スタッフ採用", desc: "時間を超越した存在をバリスタとして雇用" },
+                        { title: "安全プロトコル", desc: "過度な若返りによる消滅を防ぐ制御システム" },
+                        { title: "会員システム構築", desc: "永遠の顧客ロイヤリティプログラム" },
+                        { title: "デリバリーサービス", desc: "ワームホール経由の出前システム" },
+                        { title: "VIP宇宙ルーム", desc: "プライベートな宇宙泡での特別サービス" },
+                        { title: "グループ割引", desc: "星系全体での若返りパッケージ" },
+                        { title: "サブスク導入", desc: "永遠の若さ維持のための定期プラン" },
+                        { title: "フランチャイズ化", desc: "各時空連続体に支店展開" },
+                        { title: "時間外営業", desc: "時間が存在しない領域での24/∞サービス" }
+                    ]
+                },
+                {
+                    title: "夢の建築事務所",
+                    description: "集合無意識の中に永続的な構造物を設計・建設。眠っている間に全ての知的生命体がアクセスできる共有空間を創造。",
+                    targets: ["夢見る種族", "集合無意識体", "睡眠型文明"],
+                    steps: [
+                        { title: "夢空間マッピング", desc: "集合無意識の地形調査と測量" },
+                        { title: "建材調達", desc: "固形化した想像力と結晶化した希望を収集" },
+                        { title: "設計ソフト開発", desc: "思考だけで操作できるCADシステム" },
+                        { title: "建設チーム編成", desc: "夢の中で活動できる意識体を採用" },
+                        { title: "最初のプロジェクト", desc: "全宇宙生命体が集える共有広場の建設" },
+                        { title: "許認可取得", desc: "夢の世界の管理者からの建築許可" },
+                        { title: "品質保証", desc: "悪夢への耐性テストと構造安全性確認" },
+                        { title: "メンテナンス契約", desc: "夢の建物の永続的な維持管理サービス" },
+                        { title: "カスタム設計", desc: "個人の深層心理に合わせた空間デザイン" },
+                        { title: "商業施設展開", desc: "夢の中のショッピングモールとビジネス街" },
+                        { title: "住宅開発", desc: "永住可能な夢のマイホーム分譲" },
+                        { title: "都市計画", desc: "夢の世界全体のマスタープラン策定" }
+                    ]
+                }
+            ],
+            M: [
+                {
+                    title: "惑星意識覚醒サービス",
+                    description: "まだ意識を持たない惑星に自我を与え、宇宙コミュニティに参加させる教育・覚醒プログラム。ガイアのような存在を育成。",
+                    targets: ["原始惑星", "衛星", "小惑星帯コロニー"],
+                    steps: [
+                        { title: "惑星診断ツール開発", desc: "意識の芽生えの兆候を検出するセンサー" },
+                        { title: "覚醒カリキュラム設計", desc: "惑星規模の自我形成プログラム" },
+                        { title: "パイロット惑星選定", desc: "最初のクライアントとなる原始惑星を特定" },
+                        { title: "意識インプラント", desc: "核に意識の種を埋め込む手術" },
+                        { title: "教育AI派遣", desc: "惑星と対話する専門AIの配置" },
+                        { title: "成長モニタリング", desc: "意識発達の継続的な観察と記録" },
+                        { title: "社会化トレーニング", desc: "他の惑星意識との交流機会提供" },
+                        { title: "卒業認定制度", desc: "完全な惑星意識としての資格付与" },
+                        { title: "アフターケア", desc: "覚醒後の心理サポートとカウンセリング" },
+                        { title: "惑星間ネットワーク", desc: "覚醒済み惑星のコミュニティ構築" },
+                        { title: "太陽系パッケージ", desc: "星系全体の一括覚醒サービス" },
+                        { title: "宇宙市民権サポート", desc: "銀河連邦への加盟手続き代行" }
+                    ]
+                },
+                {
+                    title: "因果律リペアショップ",
+                    description: "壊れた因果関係を修復し、パラドックスを解消する専門サービス。時間旅行者が引き起こした矛盾を修正。",
+                    targets: ["時間犯罪者", "パラドックス被害者", "因果ループ囚人"],
+                    steps: [
+                        { title: "因果診断システム", desc: "因果関係の破損箇所を特定する技術開発" },
+                        { title: "修復ツールキット", desc: "時空の糸を縫い直す道具の製作" },
+                        { title: "技術者養成", desc: "因果律エンジニアの教育プログラム" },
+                        { title: "緊急対応チーム", desc: "パラドックス発生時の即時対応部隊" },
+                        { title: "見積もりシステム", desc: "修復の複雑さに応じた料金体系" },
+                        { title: "予防サービス", desc: "因果律の定期点検と強化" },
+                        { title: "保険商品開発", desc: "パラドックス保険の販売" },
+                        { title: "訴訟サポート", desc: "因果律破損の賠償請求代行" },
+                        { title: "DIYキット販売", desc: "軽度の因果律ほつれの自己修復キット" },
+                        { title: "教育コンテンツ", desc: "因果律を壊さないための啓発活動" },
+                        { title: "認定制度", desc: "安全な時間旅行者の資格認定" },
+                        { title: "銀河標準化", desc: "因果律保護の銀河共通ルール策定" }
+                    ]
+                },
+                {
+                    title: "感情エネルギー発電所",
+                    description: "知的生命体の感情をクリーンエネルギーに変換する施設。喜び、悲しみ、怒り、愛を電力に変換し宇宙に供給。",
+                    targets: ["エネルギー消費文明", "感情過多種族", "電力不足星系"],
+                    steps: [
+                        { title: "感情変換器の発明", desc: "感情波動をエネルギーに変換するコア技術" },
+                        { title: "収集ネットワーク", desc: "銀河全体から感情を集めるアンテナ網" },
+                        { title: "浄化システム", desc: "ネガティブ感情の安全な処理方法" },
+                        { title: "発電所建設", desc: "最初の大規模感情発電施設" },
+                        { title: "送電グリッド", desc: "次元を超えた電力供給網" },
+                        { title: "料金体系", desc: "感情の種類と強度に応じた買取価格" },
+                        { title: "感情農場", desc: "計画的に感情を生産する施設" },
+                        { title: "貯蔵技術", desc: "感情エネルギーの長期保存方法" },
+                        { title: "ピーク対応", desc: "感情爆発時の過負荷対策" },
+                        { title: "環境認証", desc: "クリーンエネルギーとしての認定取得" },
+                        { title: "株式公開", desc: "銀河証券取引所へのIPO" },
+                        { title: "宇宙公共事業化", desc: "感情エネルギーの普遍的アクセス保証" }
+                    ]
+                }
+            ],
+            L: [
+                {
+                    title: "銀河間記憶アーカイブ",
+                    description: "全宇宙の記憶と経験を収集・保存・共有する生きた図書館。消滅した文明の知恵も永遠にアクセス可能。",
+                    targets: ["研究者意識", "歴史学AI", "消滅回避希望文明"],
+                    steps: [
+                        { title: "記憶抽出技術", desc: "あらゆる存在から記憶を非破壊コピーする技術" },
+                        { title: "無限ストレージ", desc: "ブラックホール内部を利用した記憶保管庫" },
+                        { title: "インデックスシステム", desc: "10^100以上の記憶を検索可能なシステム" },
+                        { title: "アクセスインターフェース", desc: "思考だけで記憶を体験できる接続方法" },
+                        { title: "収集ドローン展開", desc: "全銀河に記憶収集ユニットを配備" },
+                        { title: "品質管理", desc: "偽の記憶や改ざんを検出する検証システム" },
+                        { title: "プライバシー設定", desc: "記憶の公開範囲を制御する権限システム" },
+                        { title: "キュレーションAI", desc: "重要な記憶を選別・推薦するAI" },
+                        { title: "体験パッケージ", desc: "人気の記憶をまとめた体験セット販売" },
+                        { title: "教育提携", desc: "宇宙の教育機関との連携" },
+                        { title: "滅亡文明保存", desc: "消滅する文明の緊急記憶バックアップ" },
+                        { title: "宇宙遺産登録", desc: "重要記憶の銀河遺産としての認定" }
+                    ]
+                },
+                {
+                    title: "次元不動産デベロッパー",
+                    description: "未開発の次元を開拓し、居住可能な空間として販売・賃貸する事業。物理法則をカスタマイズした理想の宇宙を提供。",
+                    targets: ["拡張希望文明", "隠遁者", "実験種族"],
+                    steps: [
+                        { title: "次元探査", desc: "未発見の次元を探索・発見する調査隊" },
+                        { title: "安定化技術", desc: "不安定な次元を居住可能にする技術" },
+                        { title: "物理法則カスタマイズ", desc: "顧客の要望に応じた法則設定サービス" },
+                        { title: "モデルルーム", desc: "様々な次元タイプの見学施設" },
+                        { title: "開発許可", desc: "多元宇宙評議会からの開発認可" },
+                        { title: "インフラ整備", desc: "次元間移動ゲートや通信設備の設置" },
+                        { title: "分譲販売開始", desc: "最初の次元分譲プロジェクト" },
+                        { title: "賃貸オプション", desc: "次元のタイムシェアや賃貸サービス" },
+                        { title: "管理会社設立", desc: "次元のメンテナンスと管理" },
+                        { title: "リノベーション", desc: "古い次元の改装サービス" },
+                        { title: "ポートフォリオ拡大", desc: "様々なタイプの次元物件の取得" },
+                        { title: "銀河REIT", desc: "次元不動産投資信託の上場" }
+                    ]
+                },
+                {
+                    title: "宇宙法則コンサルティング",
+                    description: "物理法則の最適化と新しい法則の導入を支援するコンサルティング。光速制限の緩和や重力定数の調整など。",
+                    targets: ["法則改変希望文明", "実験宇宙", "シミュレーション管理者"],
+                    steps: [
+                        { title: "法則監査", desc: "現行の物理法則の効率性評価" },
+                        { title: "改善提案", desc: "最適化可能な法則の特定と提案" },
+                        { title: "シミュレーション", desc: "法則変更の影響を事前検証" },
+                        { title: "段階的導入", desc: "法則変更の安全な移行計画" },
+                        { title: "影響評価", desc: "生態系や文明への影響分析" },
+                        { title: "合意形成", desc: "法則変更に対する住民の同意取得" },
+                        { title: "実装サポート", desc: "法則変更の技術的な実行支援" },
+                        { title: "モニタリング", desc: "変更後の継続的な観察と調整" },
+                        { title: "緊急ロールバック", desc: "問題発生時の即座の復旧" },
+                        { title: "成功事例集", desc: "法則最適化の事例データベース" },
+                        { title: "認定制度", desc: "法則エンジニアの資格認定" },
+                        { title: "標準化推進", desc: "銀河共通の法則ガイドライン策定" }
+                    ]
+                }
+            ],
+            XL: [
+                {
+                    title: "宇宙意識統合プラットフォーム",
+                    description: "全ての意識を一時的または永続的に統合し、一体性を体験させるプラットフォーム。個としての自我を保ちながら全宇宙と繋がる。",
+                    targets: ["孤独な神", "断片化文明", "統合志向種族"],
+                    steps: [
+                        { title: "統合プロトコル開発", desc: "意識を安全に融合させる技術的基盤" },
+                        { title: "同意フレームワーク", desc: "参加する全意識からの合意取得システム" },
+                        { title: "パイロットユニオン", desc: "最初の限定的な意識統合実験" },
+                        { title: "スケールアップ", desc: "銀河規模への拡大" },
+                        { title: "個性保存機能", desc: "統合中も自我を維持できるオプション" },
+                        { title: "一時的体験モード", desc: "時間限定の一体性体験サービス" },
+                        { title: "治療応用", desc: "孤独や分離感の治療としての統合" },
+                        { title: "創造モード", desc: "統合意識による共同創造プロジェクト" },
+                        { title: "政治統合", desc: "宇宙規模の民主的意思決定への応用" },
+                        { title: "文化交流", desc: "全文明の経験を共有するイベント" },
+                        { title: "永続オプション", desc: "希望者の永続的な統合サービス" },
+                        { title: "究極の一体化", desc: "宇宙意識との完全な融合への道" }
+                    ]
+                },
+                {
+                    title: "ビッグバン・スタートアップ・アクセラレーター",
+                    description: "新しい宇宙の創造を支援するインキュベーター。ビッグバンの資金調達、初期条件の設計、最初の10億年のメンタリング。",
+                    targets: ["創造神志望", "宇宙デザイナー", "究極の起業家"],
+                    steps: [
+                        { title: "応募受付", desc: "宇宙創造の事業計画書を募集" },
+                        { title: "選考プロセス", desc: "創造の動機と能力の審査" },
+                        { title: "シードエネルギー投資", desc: "ビッグバンに必要なエネルギー提供" },
+                        { title: "初期条件設計", desc: "物理定数と法則の設計支援" },
+                        { title: "メンター紹介", desc: "成功した宇宙創造者とのマッチング" },
+                        { title: "デモデイ準備", desc: "ビッグバン実行のリハーサル" },
+                        { title: "ビッグバン実行", desc: "宇宙の誕生を支援" },
+                        { title: "インフレーション調整", desc: "急膨張期の微調整" },
+                        { title: "元素合成サポート", desc: "最初の原子形成の最適化" },
+                        { title: "銀河形成コンサル", desc: "構造形成期のアドバイス" },
+                        { title: "生命出現支援", desc: "生命誕生の条件整備" },
+                        { title: "エグジット戦略", desc: "宇宙の自立運営への移行" }
+                    ]
+                },
+                {
+                    title: "輪廻転生マネジメント",
+                    description: "魂の転生先を最適化するキャリアカウンセリング。来世の種族、惑星、時代を戦略的に選択し、魂の成長を最大化。",
+                    targets: ["転生予定魂", "カルマ精算希望者", "経験コレクター"],
+                    steps: [
+                        { title: "魂の評価", desc: "過去生の分析と現在の成長段階の診断" },
+                        { title: "目標設定", desc: "来世で達成したい成長目標の明確化" },
+                        { title: "オプション提示", desc: "最適な転生先の候補リスト作成" },
+                        { title: "シミュレーション", desc: "各転生先での人生シナリオ体験" },
+                        { title: "カルマ清算計画", desc: "未解決のカルマを効率的に処理する計画" },
+                        { title: "契約締結", desc: "転生先との魂レベルの合意形成" },
+                        { title: "準備トレーニング", desc: "来世に必要なスキルの事前習得" },
+                        { title: "移行サポート", desc: "死から転生への円滑な移行支援" },
+                        { title: "記憶設定", desc: "前世の記憶の保持/消去の設定" },
+                        { title: "フォローアップ", desc: "転生後の進捗確認とサポート" },
+                        { title: "緊急脱出", desc: "転生先が不適切な場合の早期終了オプション" },
+                        { title: "最終解脱支援", desc: "輪廻からの解放を希望する魂への支援" }
+                    ]
+                }
+            ],
+            BEYOND: [
+                {
+                    title: "存在と非存在の間のリゾート",
+                    description: "存在することと存在しないことの境界にある究極のリトリート。休息の究極形態—存在の重荷から一時的に解放される。",
+                    targets: ["疲れた神々", "永遠の存在", "虚無体験希望者"],
+                    steps: [
+                        { title: "境界領域の発見", desc: "存在と非存在の境目を特定" },
+                        { title: "安定化フィールド", desc: "境界に留まれる空間の構築" },
+                        { title: "アクセスポイント設置", desc: "通常の存在からの入り口を作成" },
+                        { title: "滞在プラン設計", desc: "部分的/完全な非存在体験のコース" },
+                        { title: "安全システム", desc: "完全な消滅を防ぐセーフガード" },
+                        { title: "帰還プロトコル", desc: "存在への確実な復帰方法" },
+                        { title: "スタッフ研修", desc: "半存在状態のコンシェルジュ育成" },
+                        { title: "アメニティ開発", desc: "存在しない状態でも楽しめる設備" },
+                        { title: "長期滞在プラン", desc: "数エオン単位の非存在休暇" },
+                        { title: "ファミリープラン", desc: "集団での同時非存在体験" },
+                        { title: "メンバーシップ", desc: "永遠の非存在アクセス権" },
+                        { title: "完全消滅オプション", desc: "復帰なしの永遠の安らぎサービス" }
+                    ]
+                },
+                {
+                    title: "時間の終わりの先のビジネス特区",
+                    description: "時間が終了した後の領域に設置された経済特区。因果律や時系列に縛られない取引と価値創造の場。",
+                    targets: ["ポスト時間意識", "終末後事業者", "永遠投資家"],
+                    steps: [
+                        { title: "時間終点の特定", desc: "時間が終わる正確な座標を測定" },
+                        { title: "ポスト時間インフラ", desc: "時系列なしで機能するシステム構築" },
+                        { title: "非因果的契約法", desc: "原因と結果なしの契約フレームワーク" },
+                        { title: "価値の再定義", desc: "時間なしでの価値概念の確立" },
+                        { title: "通貨システム", desc: "非時系列的な交換媒体の創造" },
+                        { title: "企業登録", desc: "ポスト時間企業の法的認定" },
+                        { title: "税制設計", desc: "無時間での課税方法" },
+                        { title: "労働法", desc: "終わりなき労働の権利と義務" },
+                        { title: "知的財産", desc: "時間外での創造物の所有権" },
+                        { title: "紛争解決", desc: "因果なき裁判システム" },
+                        { title: "保険商品", desc: "存在しないリスクへの保険" },
+                        { title: "銀河連邦加盟", desc: "通常宇宙との外交関係確立" }
+                    ]
+                },
+                {
+                    title: "無限の可能性の具現化サービス",
+                    description: "実現されなかった全ての可能性を具現化し、パラレルな存在として生かすサービス。選ばなかった全ての選択肢を実体化。",
+                    targets: ["後悔する神", "可能性マニア", "完璧主義宇宙"],
+                    steps: [
+                        { title: "可能性スキャン", desc: "未実現の全可能性を検出する技術" },
+                        { title: "具現化エンジン", desc: "可能性を実体化する装置の開発" },
+                        { title: "並行管理システム", desc: "無限の具現化を整理・管理" },
+                        { title: "優先順位付け", desc: "具現化する可能性の選別基準" },
+                        { title: "リソース確保", desc: "無限の具現化に必要なエネルギー" },
+                        { title: "パイロットケース", desc: "最初の可能性具現化実験" },
+                        { title: "品質管理", desc: "具現化された可能性の安定性確保" },
+                        { title: "統合サービス", desc: "本流との可能性の再統合オプション" },
+                        { title: "体験パッケージ", desc: "選ばなかった人生の一時体験" },
+                        { title: "無限拡張", desc: "全可能性の同時具現化" },
+                        { title: "宇宙容量増設", desc: "無限の具現化を収める空間確保" },
+                        { title: "完全実現", desc: "全ての可能性が現実となった状態" }
+                    ]
+                }
+            ]
+        };
+
+        let selectedScale = 'L';
+        let powerLevel = 0;
+
+        // Initialize
+        document.querySelectorAll('.scale-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.scale-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                selectedScale = this.dataset.scale;
+                updatePowerLevel();
+            });
+        });
+
+        function updatePowerLevel() {
+            const levels = {
+                'S': '9,000+',
+                'M': '100,000+',
+                'L': '1,000,000+',
+                'XL': '∞ OVER 9000 BILLION',
+                'BEYOND': '?????? IMMEASURABLE'
+            };
+            document.getElementById('powerLevel').textContent = `POWER LEVEL: ${levels[selectedScale]}`;
+        }
+
+        function generateIdea() {
+            const btn = document.querySelector('.generate-btn');
+            btn.classList.add('charging');
+            btn.textContent = '⚡ 集中...元気を集めている... ⚡';
+
+            // Dramatic delay
+            setTimeout(() => {
+                btn.textContent = '💥 発射！！！ 💥';
+
+                setTimeout(() => {
+                    const ideas = businessIdeas[selectedScale];
+                    const idea = ideas[Math.floor(Math.random() * ideas.length)];
+                    displayIdea(idea);
+
+                    btn.classList.remove('charging');
+                    btn.textContent = '⚡ 発動！元気玉ビジネス ⚡';
+                }, 500);
+            }, 1500);
+        }
+
+        function displayIdea(idea) {
+            const resultContainer = document.getElementById('result');
+            const scaleNames = {
+                'S': 'S - QUANTUM SEED',
+                'M': 'M - PLANETARY MIND',
+                'L': 'L - GALACTIC NETWORK',
+                'XL': 'XL - UNIVERSAL FABRIC',
+                'BEYOND': '∞ - BEYOND EXISTENCE'
+            };
+
+            document.getElementById('ideaScale').textContent = scaleNames[selectedScale];
+            document.getElementById('ideaTitle').textContent = idea.title;
+            document.getElementById('ideaDesc').textContent = idea.description;
+
+            // Targets
+            const targetContainer = document.getElementById('ideaTarget');
+            targetContainer.innerHTML = '';
+            idea.targets.forEach(target => {
+                const tag = document.createElement('span');
+                tag.className = 'target-tag';
+                tag.textContent = target;
+                targetContainer.appendChild(tag);
+            });
+
+            // Steps
+            const stepsContainer = document.getElementById('stepsContent');
+            stepsContainer.innerHTML = '';
+            idea.steps.forEach((step, index) => {
+                const stepEl = document.createElement('div');
+                stepEl.className = 'step';
+                stepEl.innerHTML = `
+                    <div class="step-number">${index + 1}</div>
+                    <div class="step-content">
+                        <div class="step-title">${step.title}</div>
+                        <div class="step-desc">${step.desc}</div>
+                    </div>
+                `;
+                stepsContainer.appendChild(stepEl);
+            });
+
+            resultContainer.classList.add('show');
+            resultContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Initial power level
+        updatePowerLevel();
+    </script>
+</body>
+</html>

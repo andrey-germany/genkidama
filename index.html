@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -55,18 +56,25 @@
             z-index: -1;
             background-image:
                 radial-gradient(2px 2px at 20px 30px, white, transparent),
-                radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+                radial-gradient(2px 2px at 40px 70px, rgba(255, 255, 255, 0.8), transparent),
                 radial-gradient(1px 1px at 90px 40px, white, transparent),
-                radial-gradient(2px 2px at 160px 120px, rgba(255,255,255,0.9), transparent),
+                radial-gradient(2px 2px at 160px 120px, rgba(255, 255, 255, 0.9), transparent),
                 radial-gradient(1px 1px at 230px 80px, white, transparent),
-                radial-gradient(2px 2px at 300px 150px, rgba(255,255,255,0.7), transparent);
+                radial-gradient(2px 2px at 300px 150px, rgba(255, 255, 255, 0.7), transparent);
             background-size: 350px 200px;
             animation: twinkle 5s ease-in-out infinite;
         }
 
         @keyframes twinkle {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
         }
 
         /* Genki Dama floating sphere */
@@ -78,26 +86,40 @@
             height: 150px;
             border-radius: 50%;
             background: radial-gradient(circle at 30% 30%,
-                white 0%,
-                var(--ki-blue) 30%,
-                var(--cosmic-purple) 60%,
-                transparent 100%);
+                    white 0%,
+                    var(--ki-blue) 30%,
+                    var(--cosmic-purple) 60%,
+                    transparent 100%);
             box-shadow:
                 0 0 60px var(--ki-blue),
                 0 0 120px var(--cosmic-purple),
-                inset 0 0 60px rgba(255,255,255,0.5);
+                inset 0 0 60px rgba(255, 255, 255, 0.5);
             animation: pulse-sphere 3s ease-in-out infinite, float 6s ease-in-out infinite;
             opacity: 0.8;
         }
 
         @keyframes pulse-sphere {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
         }
 
         @keyframes float {
-            0%, 100% { translate: 0 0; }
-            50% { translate: 0 -20px; }
+
+            0%,
+            100% {
+                translate: 0 0;
+            }
+
+            50% {
+                translate: 0 -20px;
+            }
         }
 
         .container {
@@ -126,8 +148,13 @@
         }
 
         @keyframes glow-text {
-            from { filter: drop-shadow(0 0 10px var(--ki-orange)); }
-            to { filter: drop-shadow(0 0 30px var(--super-saiyan)); }
+            from {
+                filter: drop-shadow(0 0 10px var(--ki-orange));
+            }
+
+            to {
+                filter: drop-shadow(0 0 30px var(--super-saiyan));
+            }
         }
 
         .subtitle {
@@ -186,7 +213,8 @@
             left: 100%;
         }
 
-        .scale-btn:hover, .scale-btn.active {
+        .scale-btn:hover,
+        .scale-btn.active {
             background: linear-gradient(135deg, var(--ki-blue), var(--cosmic-purple));
             border-color: var(--super-saiyan);
             box-shadow: 0 0 30px var(--ki-blue);
@@ -211,8 +239,13 @@
         }
 
         @keyframes beyond-glow {
-            from { box-shadow: 0 0 10px var(--super-saiyan); }
-            to { box-shadow: 0 0 40px var(--super-saiyan), 0 0 80px var(--ki-orange); }
+            from {
+                box-shadow: 0 0 10px var(--super-saiyan);
+            }
+
+            to {
+                box-shadow: 0 0 40px var(--super-saiyan), 0 0 80px var(--ki-orange);
+            }
         }
 
         /* Generate Button */
@@ -252,8 +285,15 @@
         }
 
         @keyframes charge {
-            0%, 100% { box-shadow: 0 0 30px var(--ki-orange); }
-            50% { box-shadow: 0 0 80px var(--super-saiyan), 0 0 120px var(--ki-blue); }
+
+            0%,
+            100% {
+                box-shadow: 0 0 30px var(--ki-orange);
+            }
+
+            50% {
+                box-shadow: 0 0 80px var(--super-saiyan), 0 0 120px var(--ki-blue);
+            }
         }
 
         /* Result Card */
@@ -267,14 +307,21 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .idea-card {
             background: linear-gradient(135deg,
-                rgba(139, 0, 255, 0.2),
-                rgba(0, 212, 255, 0.1));
+                    rgba(139, 0, 255, 0.2),
+                    rgba(0, 212, 255, 0.1));
             border: 1px solid var(--ki-blue);
             border-radius: 20px;
             padding: 2rem;
@@ -347,8 +394,8 @@
             margin-bottom: 1rem;
             padding: 1rem;
             background: linear-gradient(90deg,
-                rgba(139, 0, 255, 0.1),
-                transparent);
+                    rgba(139, 0, 255, 0.1),
+                    transparent);
             border-radius: 10px;
             border-left: 3px solid var(--ki-blue);
             transition: all 0.3s ease;
@@ -356,8 +403,8 @@
 
         .step:hover {
             background: linear-gradient(90deg,
-                rgba(0, 212, 255, 0.2),
-                transparent);
+                    rgba(0, 212, 255, 0.2),
+                    transparent);
             transform: translateX(5px);
         }
 
@@ -406,8 +453,15 @@
         }
 
         @keyframes power-pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
         }
 
         /* Responsive */
@@ -432,10 +486,46 @@
                 font-size: 1.2rem;
             }
         }
+
+        /* Particles */
+        #particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+        /* Share Button */
+        .share-btn {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.8rem 2rem;
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid var(--ki-blue);
+            color: var(--ki-blue);
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: 'Orbitron', sans-serif;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .share-btn:hover {
+            background: var(--ki-blue);
+            color: var(--void-black);
+            box-shadow: 0 0 20px var(--ki-blue);
+        }
     </style>
 </head>
+
 <body>
     <div class="cosmos"></div>
+    <canvas id="particles"></canvas>
     <div class="stars"></div>
     <div class="genki-dama"></div>
 
@@ -481,6 +571,9 @@
                 <h2 class="idea-title" id="ideaTitle">Loading...</h2>
                 <p class="idea-description" id="ideaDesc">...</p>
                 <div class="idea-target" id="ideaTarget"></div>
+                <button class="share-btn" onclick="shareIdea()">
+                    📡 Galactic Broadcast
+                </button>
             </div>
 
             <div class="steps-container">
@@ -497,6 +590,205 @@
     </div>
 
     <script>
+        // --- ASCENSION PROTOCOL: AUDIO SYSTEM ---
+        class AudioSynth {
+            constructor() {
+                this.ctx = null;
+                this.isMuted = false;
+            }
+
+            init() {
+                if (!this.ctx) {
+                    this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+                }
+                if (this.ctx.state === 'suspended') {
+                    this.ctx.resume();
+                }
+            }
+
+            playTone(freq, type, duration, vol = 0.1) {
+                if (!this.ctx) return;
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+
+                osc.type = type;
+                osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
+
+                gain.gain.setValueAtTime(vol, this.ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, this.ctx.currentTime + duration);
+
+                osc.connect(gain);
+                gain.connect(this.ctx.destination);
+
+                osc.start();
+                osc.stop(this.ctx.currentTime + duration);
+            }
+
+            playCharge() {
+                this.init();
+                const now = this.ctx.currentTime;
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(50, now);
+                osc.frequency.exponentialRampToValueAtTime(800, now + 1.5);
+
+                // Tremolo for "energy" feel
+                const lfo = this.ctx.createOscillator();
+                lfo.frequency.value = 20;
+                const lfoGain = this.ctx.createGain();
+                lfoGain.gain.value = 500;
+                lfo.connect(lfoGain);
+                lfoGain.connect(osc.frequency);
+
+                gain.gain.setValueAtTime(0, now);
+                gain.gain.linearRampToValueAtTime(0.1, now + 1.5);
+
+                osc.connect(gain);
+                gain.connect(this.ctx.destination);
+                lfo.start();
+                osc.start();
+
+                osc.stop(now + 1.5);
+                lfo.stop(now + 1.5);
+            }
+
+            playBlast() {
+                this.init();
+                // Explosion noise
+                const bufferSize = this.ctx.sampleRate * 2;
+                const buffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
+                const data = buffer.getChannelData(0);
+                for (let i = 0; i < bufferSize; i++) {
+                    data[i] = Math.random() * 2 - 1;
+                }
+
+                const noise = this.ctx.createBufferSource();
+                noise.buffer = buffer;
+                const noiseGain = this.ctx.createGain();
+                noiseGain.gain.setValueAtTime(0.5, this.ctx.currentTime);
+                noiseGain.gain.exponentialRampToValueAtTime(0.01, this.ctx.currentTime + 1.5);
+
+                // Low boom
+                const osc = this.ctx.createOscillator();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(100, this.ctx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(10, this.ctx.currentTime + 1);
+
+                const oscGain = this.ctx.createGain();
+                oscGain.gain.setValueAtTime(0.5, this.ctx.currentTime);
+                oscGain.gain.exponentialRampToValueAtTime(0.01, this.ctx.currentTime + 1);
+
+                noise.connect(noiseGain);
+                noiseGain.connect(this.ctx.destination);
+                osc.connect(oscGain);
+                oscGain.connect(this.ctx.destination);
+
+                noise.start();
+                osc.start();
+            }
+
+            playSuccess() {
+                this.init();
+                // Chord
+                [440, 554, 659, 880].forEach((freq, i) => {
+                    setTimeout(() => this.playTone(freq, 'sine', 2, 0.05), i * 50);
+                });
+            }
+        }
+
+        // --- ASCENSION PROTOCOL: PARTICLE SYSTEM ---
+        class ParticleSystem {
+            constructor() {
+                this.canvas = document.getElementById('particles');
+                this.ctx = this.canvas.getContext('2d');
+                this.particles = [];
+                this.resize();
+                window.addEventListener('resize', () => this.resize());
+                this.loop();
+            }
+
+            resize() {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+            }
+
+            explode(x, y, color) {
+                for (let i = 0; i < 100; i++) {
+                    this.particles.push({
+                        x: x,
+                        y: y,
+                        vx: (Math.random() - 0.5) * 20,
+                        vy: (Math.random() - 0.5) * 20,
+                        life: 1.0,
+                        color: color || '#fff',
+                        size: Math.random() * 5 + 2
+                    });
+                }
+            }
+
+            loop() {
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+                for (let i = this.particles.length - 1; i >= 0; i--) {
+                    const p = this.particles[i];
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    p.life -= 0.02;
+                    p.vx *= 0.95;
+                    p.vy *= 0.95;
+
+                    if (p.life <= 0) {
+                        this.particles.splice(i, 1);
+                        continue;
+                    }
+
+                    this.ctx.globalAlpha = p.life;
+                    this.ctx.fillStyle = p.color;
+                    this.ctx.beginPath();
+                    this.ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                    this.ctx.fill();
+                }
+
+                requestAnimationFrame(() => this.loop());
+            }
+        }
+
+        const audio = new AudioSynth();
+        // Initialize particles after DOM load
+        let particles;
+        window.addEventListener('DOMContentLoaded', () => {
+            particles = new ParticleSystem();
+        });
+
+        // --- ASCENSION PROTOCOL: SHARING ---
+        async function shareIdea() {
+            const title = document.getElementById('ideaTitle').textContent;
+            const desc = document.getElementById('ideaDesc').textContent;
+            const scale = document.getElementById('ideaScale').textContent;
+
+            const shareData = {
+                title: 'Genki Dama Business Idea',
+                text: `⚡ NEW BUSINESS MANIFESTED: ${title} (${scale}) ⚡\n${desc}\n#GenkiDama #Singularity`,
+                url: window.location.href
+            };
+
+            try {
+                if (navigator.share) {
+                    await navigator.share(shareData);
+                } else {
+                    await navigator.clipboard.writeText(shareData.text);
+                    const btn = document.querySelector('.share-btn');
+                    const originalText = btn.textContent;
+                    btn.textContent = '📋 Transmitted to Clipboard!';
+                    setTimeout(() => btn.textContent = originalText, 2000);
+                }
+            } catch (err) {
+                console.log('Transmission cancelled', err);
+            }
+        }
+
         // Business idea database - 10,000 years in the future
         const businessIdeas = {
             S: [
@@ -801,7 +1093,7 @@
 
         // Initialize
         document.querySelectorAll('.scale-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
+            btn.addEventListener('click', function () {
                 document.querySelectorAll('.scale-btn').forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
                 selectedScale = this.dataset.scale;
@@ -822,17 +1114,40 @@
 
         function generateIdea() {
             const btn = document.querySelector('.generate-btn');
+
+            // Audio Context Unlock
+            audio.init();
+
             btn.classList.add('charging');
             btn.textContent = '⚡ 集中...元気を集めている... ⚡';
+
+            // Play Charge Sound
+            audio.playCharge();
 
             // Dramatic delay
             setTimeout(() => {
                 btn.textContent = '💥 発射！！！ 💥';
 
+                // Play Blast Sound
+                audio.playBlast();
+
+                // Visual Explosion (Center screen)
+                const rect = btn.getBoundingClientRect();
+                if (particles) {
+                    particles.explode(
+                        rect.left + rect.width / 2,
+                        rect.top + rect.height / 2,
+                        '#ff6b00' // Ki Orange
+                    );
+                }
+
                 setTimeout(() => {
                     const ideas = businessIdeas[selectedScale];
                     const idea = ideas[Math.floor(Math.random() * ideas.length)];
                     displayIdea(idea);
+
+                    // Success sound
+                    audio.playSuccess();
 
                     btn.classList.remove('charging');
                     btn.textContent = '⚡ 発動！元気玉ビジネス ⚡';
@@ -888,4 +1203,5 @@
         updatePowerLevel();
     </script>
 </body>
+
 </html>

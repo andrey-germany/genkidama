@@ -1,0 +1,31 @@
+{
+  "id": "demo-datenschutz-freiheit",
+  "name": "Freiheit statt Angst – Großdemonstration Datenschutz",
+  "type": "Event / Demonstration",
+  "role": "Projektleiter",
+  "organisation": "Humanistische Union",
+  "location": "Berlin",
+  "period": {
+    "start": "2014-07",
+    "end": "2014-10",
+    "duration_months": 4
+  },
+  "budget": {
+    "amount": 40000,
+    "currency": "EUR"
+  },
+  "scope": "Organisation einer Großdemonstration zum Thema Datenschutz und digitale Bürgerrechte",
+  "responsibilities": [
+    "Koordination der internen Kommunikation",
+    "Moderation von Planungstreffen",
+    "Mobilisierung via Blog, Facebook, Twitter",
+    "Finanzplanung und -abrechnung"
+  ],
+  "kompetenzen_erworben": [
+    "Mobilisierung",
+    "Social Media Campaigning",
+    "Koalitionsarbeit",
+    "Budget-Management 40k"
+  ],
+  "tags": ["Event", "Demonstration", "Datenschutz", "Bürgerrechte", "Berlin"]
+}

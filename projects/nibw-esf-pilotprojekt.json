@@ -1,0 +1,48 @@
+{
+  "id": "nibw-esf-pilotprojekt",
+  "name": "NIBW – Nachhaltige Integration in Bremen-Walle",
+  "type": "Bundes-ESF-Projekt",
+  "role": "Projekt- und Teamleiter",
+  "organisation": "WaBeQ gGmbH",
+  "period": {
+    "start": "2019-02",
+    "end": "2023-07",
+    "duration_months": 53
+  },
+  "budget": {
+    "amount": 2000000,
+    "currency": "EUR"
+  },
+  "team": {
+    "size": 3,
+    "type": "interdisziplinär"
+  },
+  "partners": 7,
+  "scope": "Pilotprojekt zur nachhaltigen Integration",
+  "responsibilities": [
+    "Antragstellung und Projektakquise",
+    "Gesamtplanung und strategische Weiterentwicklung",
+    "Teamführung und Personalentwicklung",
+    "Koordination der Projektpartner-Kommunikation",
+    "Sicherstellung der Förderbedingungen",
+    "Controlling und Berichtswesen",
+    "Inhaltliche und quantitative Zielkontrolle",
+    "Sachberichte für Kostenträger",
+    "Interne und externe QM-Audits",
+    "Koordination der Öffentlichkeitsarbeit",
+    "Organisation interner Schulungen"
+  ],
+  "trainings_delivered": [
+    "EU-Förderbedingungen",
+    "Online Marketing",
+    "Datenschutz"
+  ],
+  "kompetenzen_erworben": [
+    "Großprojekt-Management",
+    "EU-Förderrichtlinien",
+    "Stakeholder-Management",
+    "Qualitätsmanagement",
+    "Berichtswesen"
+  ],
+  "tags": ["ESF", "Integration", "Projektleitung", "2-Mio-Budget", "Bremen"]
+}

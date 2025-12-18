@@ -1,0 +1,314 @@
+{
+  "meta": {
+    "schema": "IvoCV/1.0",
+    "updated": "2025-01-01",
+    "language": "de"
+  },
+  "person": {
+    "name": "Ivo Gruner",
+    "firstName": "Ivo",
+    "lastName": "Gruner",
+    "phone": "+49 176 45926719",
+    "email": "ivogruner@gmail.com",
+    "location": "Bremen, Deutschland"
+  },
+  "stationen": [
+    {
+      "id": "drk-2025",
+      "organisation": "Deutsches Rotes Kreuz",
+      "location": "Bremen",
+      "role": "Fundraiser",
+      "department": "Öffentlichkeitsarbeit",
+      "period": {
+        "start": "2025-11",
+        "end": "2026-04"
+      },
+      "type": "employment",
+      "highlights": [
+        "Relationship-Manager für Major Giving und Legacy Donations",
+        "Strategieentwicklung und -umsetzung für alle Donor Tiers",
+        "Entwicklung und Implementation eines Custom-CRM"
+      ],
+      "metrics": {
+        "leads": 50,
+        "deals": 20,
+        "value": "7-stellig"
+      }
+    },
+    {
+      "id": "wabeq-social-2024",
+      "organisation": "Waller Beschäftigungs- und Qualifizierungsgesellschaft gGmbH",
+      "shortName": "WaBeQ",
+      "location": "Bremen",
+      "role": "Social Media Manager",
+      "department": "Öffentlichkeitsarbeit",
+      "period": {
+        "start": "2024-11",
+        "end": "2025-02"
+      },
+      "type": "employment",
+      "highlights": [
+        "Konzeption und Umsetzung von Video-Content für Instagram und Facebook",
+        "Harmonisierung des Corporate Design auf allen Social-Media-Kanälen",
+        "Weiterentwicklung der Social-Media-Strategie",
+        "Deutliche Steigerung von Reichweite, Interaktionen, Follower",
+        "Konzeption und Druckabwicklung einer Imagebroschüre"
+      ]
+    },
+    {
+      "id": "wabeq-biwaq-2023",
+      "organisation": "WaBeQ gGmbH",
+      "location": "Bremen",
+      "role": "Projekt- und Teamleiter",
+      "project": "BIWAQ",
+      "projectType": "Bundes-ESF-Projekt",
+      "period": {
+        "start": "2023-08",
+        "end": "2024-10"
+      },
+      "type": "project-lead",
+      "teamSize": 5,
+      "highlights": [
+        "Aufbau eines Beratungszentrums zur Förderung von Arbeitsmarktintegration",
+        "Konzeption, Umsetzung und Kontrolle der Projektziele",
+        "Führung eines interdisziplinären Teams",
+        "Vernetzung mit externen Partnern",
+        "Entwicklung eines Dokumentationssystems"
+      ]
+    },
+    {
+      "id": "wabeq-nibw-2019",
+      "organisation": "WaBeQ gGmbH",
+      "location": "Bremen",
+      "role": "Projekt- und Teamleiter",
+      "project": "NIBW",
+      "projectType": "Bundes-ESF-Projekt",
+      "period": {
+        "start": "2019-02",
+        "end": "2023-07"
+      },
+      "type": "project-lead",
+      "teamSize": 3,
+      "budget": {
+        "amount": 2000000,
+        "currency": "EUR"
+      },
+      "partners": 7,
+      "highlights": [
+        "Antragstellung für 3-jähriges Pilotprojekt mit 2 Mio. Euro Budget",
+        "Gesamtplanung, Umsetzung und Weiterentwicklung",
+        "Führung eines interdisziplinären Teams",
+        "Koordination der Projektpartner-Kommunikation",
+        "Controlling und Berichtswesen",
+        "QM-Audits mit Geschäftsführung",
+        "Koordination der Öffentlichkeitsarbeit",
+        "Organisation interner Schulungen"
+      ]
+    },
+    {
+      "id": "vim-2016",
+      "organisation": "Verein für Innere Mission Bremen",
+      "shortName": "VIM",
+      "location": "Bremen",
+      "role": "Betreuer für Geflüchtete",
+      "department": "Notunterkünfte und Übergangswohnheime",
+      "period": {
+        "start": "2016-03",
+        "end": "2019-01"
+      },
+      "type": "employment",
+      "highlights": [
+        "Antragstellung und Berichterstellung für Projektförderungen",
+        "Akquise und Betreuung von 20 Ehrenamtlichen",
+        "Sprach- und Kulturmittlung",
+        "Unterstützung bei Behördenangelegenheiten"
+      ]
+    },
+    {
+      "id": "naturfreunde-2015",
+      "organisation": "NaturFreunde Berlin",
+      "location": "München",
+      "role": "Projektleiter",
+      "project": "Großdemonstration Weltwirtschaft",
+      "period": {
+        "start": "2015-04",
+        "end": "2015-06"
+      },
+      "type": "project-lead",
+      "budget": {
+        "amount": 150000,
+        "currency": "EUR"
+      },
+      "highlights": [
+        "Projekt- und Eventmanagement",
+        "Abstimmung mit Behörden",
+        "Booking und Programmplanung",
+        "Organisation einer Pressekonferenz"
+      ]
+    },
+    {
+      "id": "hu-2014",
+      "organisation": "Humanistische Union",
+      "location": "Berlin",
+      "role": "Projektleiter",
+      "project": "Großdemonstration Datenschutz",
+      "period": {
+        "start": "2014-07",
+        "end": "2014-10"
+      },
+      "type": "project-lead",
+      "budget": {
+        "amount": 40000,
+        "currency": "EUR"
+      },
+      "highlights": [
+        "Koordination der internen Kommunikation",
+        "Moderation von Planungstreffen",
+        "Mobilisierung via Blog, Facebook, Twitter",
+        "Finanzplanung und -abrechnung"
+      ]
+    },
+    {
+      "id": "campact-2014",
+      "organisation": "Campact",
+      "location": "Verden",
+      "role": "Kampagnen-Assistent",
+      "project": "Energiewende",
+      "period": {
+        "start": "2014-02",
+        "end": "2014-07"
+      },
+      "type": "employment",
+      "highlights": [
+        "Planung und Umsetzung öffentlichkeitswirksamer Aktionen",
+        "Verfassen von Blogbeiträgen",
+        "Bildredaktion"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "id": "uni-bremen-ma",
+      "institution": "Universität Bremen",
+      "degree": "Master of Arts",
+      "field": "Transkulturelle Studien",
+      "grade": "1,2",
+      "period": {
+        "start": "2015",
+        "end": "2020"
+      },
+      "courses": [
+        "Feldforschung",
+        "Postcolonial Science & Technology Studies",
+        "Development Sociology"
+      ],
+      "thesis": {
+        "title": "Mediale Normalisierungsstrategien des Rechtsextremismus",
+        "subtitle": "Das Beispiel der deutschsprachigen Identitären Bewegung auf YouTube"
+      }
+    },
+    {
+      "id": "hs-bremen-ba",
+      "institution": "Hochschule Bremen",
+      "degree": "Bachelor of Arts",
+      "field": "Internationaler Studiengang Politikmanagement",
+      "grade": "1,3",
+      "period": {
+        "start": "2009",
+        "end": "2014"
+      },
+      "courses": [
+        "Internationale Politik",
+        "Politik und Verwaltung",
+        "Politische Kommunikation",
+        "Europäische Integration",
+        "Politikberatung",
+        "Politikfeldanalyse"
+      ],
+      "thesis": {
+        "title": "Vielfalt statt Monokultur?",
+        "subtitle": "Zu Lösungsansätzen struktureller Ausgrenzung und Exklusion im Kontext dialogorientierter Bürgerbeteiligung"
+      },
+      "extras": [
+        {
+          "type": "exchange",
+          "institution": "İstanbul Kültür Üniversitesi",
+          "program": "ERASMUS"
+        }
+      ]
+    }
+  ],
+  "kompetenzen": {
+    "kernkompetenzen": [
+      {
+        "name": "Projektmanagement",
+        "level": "expert",
+        "evidence": ["NIBW 2 Mio. Budget", "BIWAQ", "Großdemonstrationen"],
+        "years": 10
+      },
+      {
+        "name": "Teamführung",
+        "level": "expert",
+        "evidence": ["5-köpfiges Team BIWAQ", "3-köpfiges Team NIBW"],
+        "years": 6
+      },
+      {
+        "name": "Fundraising & Donor Relations",
+        "level": "advanced",
+        "evidence": ["DRK Major Giving", "7-stelliges Value"],
+        "years": 2
+      },
+      {
+        "name": "Öffentlichkeitsarbeit & Social Media",
+        "level": "advanced",
+        "evidence": ["WaBeQ Social Media", "Campact"],
+        "years": 5
+      },
+      {
+        "name": "Qualitative Sozialforschung",
+        "level": "advanced",
+        "evidence": ["MA Transkulturelle Studien", "Feldforschung"],
+        "years": 5
+      }
+    ],
+    "sprachen": [
+      { "language": "Deutsch", "level": "native", "code": "de" },
+      { "language": "Englisch", "level": "C1", "code": "en" },
+      { "language": "Türkisch", "level": "B1", "code": "tr" }
+    ],
+    "tools": {
+      "office": ["Microsoft 365", "SharePoint", "MS Teams", "Outlook", "Google Workspace", "Zoom"],
+      "creative": ["Canva", "YouTube Create", "CapCut", "Meta Business Suite"],
+      "projectManagement": ["Trello", "Asana", "Slack"],
+      "web": ["WordPress", "HTML5", "CSS3", "Tailwind", "JavaScript", "Cursor"]
+    },
+    "methoden": [
+      "Ethnologische Feldforschung",
+      "Leitfadengestützte Interviews",
+      "Qualitative Sozialforschung",
+      "Interkulturelles Projektmanagement",
+      "Facilitative Leadership"
+    ]
+  },
+  "trainings": [
+    { "provider": "DRK Bremen", "topic": "Großspenden-Fundraising" },
+    { "provider": "WaBeQ", "topic": "Leadership" },
+    { "provider": "WaBeQ", "topic": "Interkulturelle Sensibilität" },
+    { "provider": "WaBeQ", "topic": "Digitale Zielgruppenarbeit" },
+    { "provider": "WaBeQ", "topic": "Kommunikation" },
+    { "provider": "VIM", "topic": "Prävention sexualisierter Gewalt in Flüchtlingseinrichtungen" },
+    { "provider": "VIM", "topic": "Radikalisierungsprävention" },
+    { "provider": "VIM", "topic": "Familiäre Gewalt" },
+    { "provider": "VIM", "topic": "Erlebnispädagogik" },
+    { "provider": "Theodor-Heuss-Stiftung", "topic": "Interkulturelles Projektmanagement" },
+    { "provider": "Initiative Mittel- und Osteuropa", "topic": "Facilitative Leadership" },
+    { "provider": "betterplace Academy", "topic": "Online-Fundraising & Marketing für NGOs" },
+    { "provider": "Coursera", "topic": "Google Ads for Beginners" }
+  ],
+  "extras": [
+    { "type": "scholarship", "name": "Theodor-Heuss-Kolleg", "provider": "Robert-Bosch-Stiftung", "year": 2009 },
+    { "type": "internship", "name": "Bundestagsbüro Marieluise Beck MdB", "year": 2011 },
+    { "type": "internship", "name": "Campact e.V.", "year": 2011 },
+    { "type": "werkstudent", "name": "KWI Universität Duisburg-Essen" }
+  ]
+}

@@ -166,6 +166,19 @@ h1, h2, h3 {
   color: var(--green);
 }
 
+.about-credentials {
+  margin-top: 24px;
+  font-size: 0.9rem;
+  color: var(--gray);
+  font-style: italic;
+}
+
+.boundaries-note {
+  font-style: italic;
+  color: var(--green);
+  margin-top: 8px;
+}
+
 /* SERVICES SLIDE */
 .slide-services h2 {
   font-size: 2rem;

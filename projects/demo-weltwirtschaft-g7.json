@@ -1,0 +1,34 @@
+{
+  "id": "demo-weltwirtschaft-g7",
+  "name": "Großdemonstration Weltwirtschaft / G7",
+  "type": "Event / Demonstration",
+  "role": "Projektleiter",
+  "organisation": "NaturFreunde Berlin",
+  "location": "München",
+  "period": {
+    "start": "2015-04",
+    "end": "2015-06",
+    "duration_months": 3
+  },
+  "budget": {
+    "amount": 150000,
+    "currency": "EUR"
+  },
+  "scope": "Organisation und Durchführung einer Großdemonstration zum Thema Weltwirtschaft",
+  "responsibilities": [
+    "Projekt- und Eventmanagement",
+    "Abstimmung mit Behörden",
+    "Booking von Rednern und Künstlern",
+    "Programmplanung",
+    "Finanzplanung und -abrechnung",
+    "Organisation einer Pressekonferenz",
+    "Anzeigenschaltung"
+  ],
+  "kompetenzen_erworben": [
+    "Großveranstaltungen",
+    "Behördenkoordination",
+    "Pressearbeit",
+    "Budget-Management 150k"
+  ],
+  "tags": ["Event", "Demonstration", "Politik", "G7", "München"]
+}

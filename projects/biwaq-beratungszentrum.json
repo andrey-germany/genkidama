@@ -1,0 +1,33 @@
+{
+  "id": "biwaq-beratungszentrum",
+  "name": "BIWAQ – Beratungszentrum Arbeitsmarktintegration",
+  "type": "Bundes-ESF-Projekt",
+  "role": "Projekt- und Teamleiter",
+  "organisation": "WaBeQ gGmbH",
+  "period": {
+    "start": "2023-08",
+    "end": "2024-10",
+    "duration_months": 14
+  },
+  "team": {
+    "size": 5,
+    "type": "interdisziplinär"
+  },
+  "scope": "Aufbau und Betrieb eines Beratungszentrums zur Arbeitsmarktintegration",
+  "responsibilities": [
+    "Aufbau des Beratungszentrums",
+    "Konzeption der inhaltlichen Projektziele",
+    "Umsetzung und Kontrolle quantitativer Ziele",
+    "Führung eines 5-köpfigen Teams",
+    "Vernetzung mit externen Partnern",
+    "Integration mit firmeninternen Projekten",
+    "Entwicklung eines Dokumentationssystems"
+  ],
+  "kompetenzen_erworben": [
+    "Aufbauorganisation",
+    "Teamführung",
+    "Dokumentationsmanagement",
+    "Netzwerkarbeit"
+  ],
+  "tags": ["ESF", "BIWAQ", "Arbeitsmarkt", "Beratung", "Bremen"]
+}

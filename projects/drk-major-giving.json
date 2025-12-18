@@ -1,0 +1,32 @@
+{
+  "id": "drk-major-giving",
+  "name": "Major Giving & Legacy Donations Program",
+  "type": "Fundraising",
+  "role": "Fundraiser / Relationship Manager",
+  "organisation": "Deutsches Rotes Kreuz",
+  "location": "Bremen",
+  "period": {
+    "start": "2025-11",
+    "end": "2026-04",
+    "duration_months": 6
+  },
+  "scope": "Aufbau und Management von Großspender- und Erbschafts-Fundraising",
+  "metrics": {
+    "leads": 50,
+    "deals": 20,
+    "value": "7-stellig"
+  },
+  "responsibilities": [
+    "Relationship-Management für Major Donors",
+    "Legacy Donations Akquise",
+    "Strategieentwicklung für alle Donor Tiers",
+    "Implementation eines Custom-CRM"
+  ],
+  "kompetenzen_erworben": [
+    "Major Giving",
+    "Donor Relations",
+    "CRM-Entwicklung",
+    "High-Value Fundraising"
+  ],
+  "tags": ["Fundraising", "DRK", "Major Giving", "CRM", "Bremen"]
+}

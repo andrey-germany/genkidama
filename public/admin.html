@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ivo – Session Timer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #D4A03E;
+      --green: #2D5A4A;
+      --red: #C94A4A;
+      --black: #1A1A1A;
+      --white: #FAFAFA;
+      --gray: #8A8A8A;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--black);
+      color: var(--white);
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 300;
+      text-align: center;
+      margin-bottom: 40px;
+      color: var(--gold);
+    }
+
+    /* Session Cards */
+    .session-card {
+      background: #2A2A2A;
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+
+    .session-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .client-name {
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+
+    .pricing-mode {
+      font-size: 0.85rem;
+      padding: 4px 12px;
+      border-radius: 12px;
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    .pricing-mode.roulette {
+      background: linear-gradient(135deg, #FFD700, #FF6B6B);
+    }
+
+    /* Timer Display */
+    .timer-display {
+      text-align: center;
+      padding: 40px 0;
+    }
+
+    .timer {
+      font-size: 4rem;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: 0.05em;
+    }
+
+    .timer.running {
+      color: var(--green);
+    }
+
+    .timer.stopped {
+      color: var(--gray);
+    }
+
+    .current-price {
+      font-size: 2rem;
+      color: var(--gold);
+      margin-top: 16px;
+    }
+
+    /* Controls */
+    .controls {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 24px;
+    }
+
+    .btn {
+      padding: 16px 32px;
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-start {
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .btn-start:hover {
+      background: #3D7A6A;
+    }
+
+    .btn-stop {
+      background: var(--red);
+      color: var(--white);
+    }
+
+    .btn-stop:hover {
+      background: #D95A5A;
+    }
+
+    .btn-invoice {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* Booking List */
+    .booking-list {
+      margin-top: 40px;
+    }
+
+    .booking-list h2 {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--gray);
+      margin-bottom: 16px;
+    }
+
+    .booking-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px;
+      background: #2A2A2A;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .booking-item:hover {
+      background: #3A3A3A;
+    }
+
+    .booking-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .booking-name {
+      font-weight: 500;
+    }
+
+    .booking-date {
+      font-size: 0.85rem;
+      color: var(--gray);
+    }
+
+    .booking-status {
+      font-size: 0.75rem;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .booking-status.pending {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    .booking-status.completed {
+      background: var(--green);
+      color: var(--white);
+    }
+
+    /* Result Modal */
+    .result-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.9);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .result-modal.active {
+      display: flex;
+    }
+
+    .result-content {
+      background: #2A2A2A;
+      border-radius: 24px;
+      padding: 48px;
+      text-align: center;
+      max-width: 400px;
+    }
+
+    .result-price {
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin: 24px 0;
+    }
+
+    .result-category {
+      font-size: 1.2rem;
+      color: var(--gray);
+      margin-bottom: 24px;
+    }
+
+    .result-category.jackpot {
+      color: #FFD700;
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .result-details {
+      font-size: 0.9rem;
+      color: var(--gray);
+      margin-bottom: 24px;
+    }
+
+    /* Empty State */
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--gray);
+    }
+
+    .empty-state p {
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Session Timer</h1>
+
+    <!-- Active Session -->
+    <div id="active-session" style="display: none;">
+      <div class="session-card">
+        <div class="session-header">
+          <span class="client-name" id="session-client">—</span>
+          <span class="pricing-mode" id="session-mode">Klassisch</span>
+        </div>
+        <div class="timer-display">
+          <div class="timer running" id="timer">00:00:00</div>
+          <div class="current-price" id="current-price">€0.00</div>
+        </div>
+        <div class="controls">
+          <button class="btn btn-stop" id="stop-btn">Stoppen</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- No Active Session -->
+    <div id="no-session">
+      <div class="empty-state">
+        <p>Keine aktive Session</p>
+        <p>Wählen Sie eine Buchung aus der Liste</p>
+      </div>
+    </div>
+
+    <!-- Booking List -->
+    <div class="booking-list">
+      <h2>Anstehende Buchungen</h2>
+      <div id="bookings"></div>
+    </div>
+
+    <!-- Completed Sessions -->
+    <div class="booking-list">
+      <h2>Abgeschlossene Sessions</h2>
+      <div id="completed"></div>
+    </div>
+  </div>
+
+  <!-- Result Modal -->
+  <div class="result-modal" id="result-modal">
+    <div class="result-content">
+      <h2>Session beendet</h2>
+      <div class="result-price" id="result-price">€0.00</div>
+      <div class="result-category" id="result-category"></div>
+      <div class="result-details" id="result-details"></div>
+      <button class="btn btn-invoice" id="download-invoice">Rechnung herunterladen</button>
+      <button class="btn" style="background: var(--gray); margin-top: 12px;" onclick="closeResult()">Schließen</button>
+    </div>
+  </div>
+
+  <script>
+    let activeSession = null;
+    let timerInterval = null;
+    let startTime = null;
+
+    // Pricing calculation (mirror of server)
+    const pricing = {
+      klassisch: (minutes) => {
+        if (minutes <= 30) return 100;
+        if (minutes <= 60) return 150;
+        if (minutes <= 120) return 220;
+        if (minutes <= 180) return 330;
+        if (minutes <= 240) return 420;
+        if (minutes <= 300) return 500;
+        return 580;
+      },
+      vertrauen: (minutes) => {
+        if (minutes <= 180) return 300;
+        return 500;
+      }
+    };
+
+    // Load bookings
+    async function loadBookings() {
+      try {
+        const response = await fetch('/api/bookings?status=pending');
+        const bookings = await response.json();
+        renderBookings(bookings);
+      } catch (error) {
+        console.error('Error loading bookings:', error);
+        // Demo data for testing
+        renderBookings([
+          { id: 1, client_name: 'Max Mustermann', booking_date: '2025-01-20', start_time: '14:00', pricing_mode: 'klassisch' },
+          { id: 2, client_name: 'Anna Schmidt', booking_date: '2025-01-21', start_time: '10:00', pricing_mode: 'roulette' }
+        ]);
+      }
+    }
+
+    function renderBookings(bookings) {
+      const container = document.getElementById('bookings');
+      if (bookings.length === 0) {
+        container.innerHTML = '<div class="empty-state"><p>Keine anstehenden Buchungen</p></div>';
+        return;
+      }
+
+      container.innerHTML = bookings.map(b => `
+        <div class="booking-item" onclick="startSession(${b.id}, '${b.client_name}', '${b.pricing_mode}')">
+          <div class="booking-info">
+            <span class="booking-name">${b.client_name}</span>
+            <span class="booking-date">${b.booking_date} · ${b.start_time} · ${b.pricing_mode}</span>
+          </div>
+          <span class="booking-status pending">Starten</span>
+        </div>
+      `).join('');
+    }
+
+    // Start session
+    async function startSession(bookingId, clientName, pricingMode) {
+      try {
+        const response = await fetch('/api/sessions/start', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ booking_id: bookingId })
+        });
+        const data = await response.json();
+        activeSession = {
+          id: data.session_id,
+          bookingId,
+          clientName,
+          pricingMode,
+          startedAt: new Date()
+        };
+      } catch (error) {
+        // Offline mode
+        activeSession = {
+          id: Date.now(),
+          bookingId,
+          clientName,
+          pricingMode,
+          startedAt: new Date()
+        };
+      }
+
+      startTime = new Date();
+      document.getElementById('session-client').textContent = clientName;
+      document.getElementById('session-mode').textContent = pricingMode;
+      document.getElementById('session-mode').className = 'pricing-mode' + (pricingMode === 'roulette' ? ' roulette' : '');
+      document.getElementById('active-session').style.display = 'block';
+      document.getElementById('no-session').style.display = 'none';
+
+      timerInterval = setInterval(updateTimer, 1000);
+    }
+
+    function updateTimer() {
+      const elapsed = Math.floor((new Date() - startTime) / 1000);
+      const hours = Math.floor(elapsed / 3600);
+      const minutes = Math.floor((elapsed % 3600) / 60);
+      const seconds = elapsed % 60;
+
+      document.getElementById('timer').textContent =
+        `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+      // Update current price (only for non-roulette)
+      if (activeSession.pricingMode !== 'roulette') {
+        const totalMinutes = Math.ceil(elapsed / 60);
+        const price = pricing[activeSession.pricingMode](totalMinutes);
+        document.getElementById('current-price').textContent = `€${price.toFixed(2)}`;
+      } else {
+        document.getElementById('current-price').textContent = '🎲 ???';
+      }
+    }
+
+    // Stop session
+    document.getElementById('stop-btn').addEventListener('click', async () => {
+      clearInterval(timerInterval);
+
+      const elapsed = Math.floor((new Date() - startTime) / 1000);
+      const totalMinutes = Math.ceil(elapsed / 60);
+
+      try {
+        const response = await fetch(`/api/sessions/${activeSession.id}/stop`, {
+          method: 'POST'
+        });
+        const data = await response.json();
+        showResult(data);
+      } catch (error) {
+        // Calculate locally
+        let price, category = null;
+        if (activeSession.pricingMode === 'roulette') {
+          const roll = Math.random() * 100;
+          if (roll < 70) {
+            price = pricing.klassisch(totalMinutes) * (0.8 + Math.random() * 0.7);
+            category = 'günstig';
+          } else if (roll < 95) {
+            price = pricing.klassisch(totalMinutes) * (2 + Math.random() * 2);
+            category = 'fair';
+          } else if (roll < 99) {
+            price = pricing.klassisch(totalMinutes) * 0.5;
+            category = 'jackpot';
+          } else {
+            price = 1000;
+            category = 'der eine Prozent';
+          }
+        } else {
+          price = pricing[activeSession.pricingMode](totalMinutes);
+        }
+
+        showResult({
+          final_price: Math.round(price * 100) / 100,
+          duration_minutes: totalMinutes,
+          roulette_result: category,
+          invoice_number: `IVO-${new Date().getFullYear()}-${String(activeSession.id).padStart(5, '0')}`
+        });
+      }
+    });
+
+    function showResult(data) {
+      document.getElementById('result-price').textContent = `€${data.final_price.toFixed(2)}`;
+      document.getElementById('result-details').textContent = `${data.duration_minutes} Minuten · ${data.invoice_number}`;
+
+      const categoryEl = document.getElementById('result-category');
+      if (data.roulette_result) {
+        categoryEl.textContent = data.roulette_result.toUpperCase();
+        categoryEl.className = 'result-category' + (data.roulette_result === 'jackpot' ? ' jackpot' : '');
+        categoryEl.style.display = 'block';
+      } else {
+        categoryEl.style.display = 'none';
+      }
+
+      document.getElementById('download-invoice').onclick = () => {
+        window.open(`/api/sessions/${activeSession.id}/invoice`, '_blank');
+      };
+
+      document.getElementById('result-modal').classList.add('active');
+
+      // Reset
+      document.getElementById('active-session').style.display = 'none';
+      document.getElementById('no-session').style.display = 'block';
+      document.getElementById('timer').textContent = '00:00:00';
+      document.getElementById('current-price').textContent = '€0.00';
+      activeSession = null;
+
+      loadBookings();
+    }
+
+    function closeResult() {
+      document.getElementById('result-modal').classList.remove('active');
+    }
+
+    // Initialize
+    loadBookings();
+  </script>
+</body>
+</html>
